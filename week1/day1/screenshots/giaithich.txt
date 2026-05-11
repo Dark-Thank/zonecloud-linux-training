@@ -1,0 +1,57 @@
+1.1.1 
+khanh@khanh-GF63-Thin-11UD:/media/khanh/Disk/ZoneCloudTraining/zonecloud-linux-training/week1/day1$ uname -a
+Linux khanh-GF63-Thin-11UD 6.14.0-37-generic #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+==> 
+Linux là tên của hệ điều hành kernel đang dùng  
+khanh-GF63-Thin-11UD là tên máy tính
+6.14.0-37-generic là phiên bản kernel Linux
+#37~24.04.1-Ubuntu là bản build kernel của Ubuntu
+SMP nói lên hệ điều hành này hỗ trợ đa CPU 
+PREEMPT_DYNAMIC nói lên hệ Kernel hỗ trợ tối ưu phản hồi hệ thống 
+Thu Nov 20 10:25:38 UTC là ngày giờ kernel được build
+x86_64 (lần 1) kiến trúc CPU
+x86_64 (lần 2)	là kiến trúc hệ thống
+x86_64 (lần 3)	là nền tảng phần cứng
+GNU/Linux	Hệ điều hành GNU + Linux
+
+1.1.2
+khanh@khanh-GF63-Thin-11UD:/media/khanh/Disk/ZoneCloudTraining/zonecloud-linux-training/week1/day1$ ls -la
+total 6
+drwxrwxrwx 1 khanh khanh 472 May 11 19:03 .
+drwxrwxrwx 1 khanh khanh 528 May 11 18:37 ..
+-rwxrwxrwx 1 khanh khanh 834 May 11 19:02 1_giaithich.txt
+-rwxrwxrwx 1 khanh khanh   1 May 11 18:41 answers.md
+-rwxrwxrwx 1 khanh khanh   0 May 11 18:37 .gitkeep
+-rwxrwxrwx 1 khanh khanh   1 May 11 18:41 README.md
+drwxrwxrwx 1 khanh khanh 208 May 11 19:02 screenshots
+
+==> 
+Có 4 file 
+1 thư mục thật 
+2 thư mục hệ thống 
+
+1.1.3
+khanh@khanh-GF63-Thin-11UD:/media/khanh/Disk/ZoneCloudTraining/zonecloud-linux-training/week1/day1$ tree -L 2
+.
+├── answers.md
+├── README.md
+└── screenshots
+    ├── 1.1.1.png
+    ├── 1.1.2.png
+    ├── 1.1.3.png
+    └── giaithich.txt
+
+2 directories, 6 files
+
+==> trong thư mục này có 6 file, 2 directories 
+
+1.1.4
+ở mục option -t sẽ cho biết thời gian sửa đổi 
+
+
+
+
+
+
+
