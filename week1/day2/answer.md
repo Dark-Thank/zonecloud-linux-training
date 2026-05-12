@@ -21,5 +21,24 @@ cat dùng để đọc và in nội dung file ra terminal
 grep dùng để tìm kiếm text  
 -i giúp không phân biệt hoa/thường 
 "error" là từ khóa cần tìm kiếm, tìm từ error 
-
 tail -20 lấy 20 dòng cuối 
+
+2.3 
+- less khác cat ở điểm gì? Khi nào dùng less thay vì cat?
+-- đối với less là xem file theo từng trang có thể cuộn lên cuộn xuống tìm kiếm 
+-- đối với cat là in toàn bộ nội dung file ra terminal một lần và không có cuộn trang 
+-- nếu file ngắn thì nên dùng cat còn nếu file dài thì dùng less và sử dụng less nếu muốn tìm kiếm keyword 
+
+- Tại sao tail -f hữu ích hơn tail khi troubleshoot?
+-- nếu sử dụng tail thì chỉ hiện các dòng cuối chạy xong là kết thúc luôn 
+-- còn đối với tail -f là theo dõi realtime nếu có thay đổi là hiển thị ngay
+-- đối với troubleshoot kiểm tra log, tìm lỗi, xác định nguyên nhân... nên khi dùng tail -f thì có thế phát hiện ngay sao khi bấm một lệnh test bất kì 
+
+- Giải thích: command > file.txt 2>&1 (từng phần)
+-- command > file.txt 2>&1 câu lệnh này dùng để chuyển output bình thường và lỗi vào cùng 1 file 
+-- phần command là lệnh bạn muốn chạy ví dụ như ls /abc 
+-- phần > file.txt dấu > dùng để redirect output tức là chuyển ra file.txt 
+-- phân 2>&1 2> tức là chuyển lỗi đi nơi khác &1 nghĩa là đến cùng nơi với stdout 
+
+
+
