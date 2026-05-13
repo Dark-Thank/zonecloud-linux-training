@@ -86,3 +86,36 @@ Legend: LOAD   → Reflects whether the unit definition was properly loaded.
 
 
 
+PhanD.18 
+- ps aux
+  Hiển thị tất cả process đang chạy trên hệ thống.
+
+- grep nginx
+  Lọc ra các process có chứa chữ "nginx".
+
+- grep -v grep
+  Loại bỏ process grep khỏi kết quả.
+
+- awk '{print $2, $11}'
+  In ra:
+  + $2  → PID của process
+  + $11 → tên command/process
+
+
+PhanD.19 
+453M	/var/lib
+214M	/var/cache
+185M	/var/log
+13M	/var/backups
+48K	/var/tmp
+48K	/var/spool
+12K	/var/www
+4,0K	/var/opt
+4,0K	/var/mail
+4,0K	/var/local
+0	/var/run
+0	/var/lock
+==> 453M /var/lib là thư mục lớn nhất trong /var
+
+
+
