@@ -78,4 +78,24 @@ du: cannot read directory '/var/log/speech-dispatcher': Permission denied
 92K	/var/log/dpkg.log
 ==> Nhìn vào thông tin ta thấy được 168M /var/log/journal là thư mục lớn nhất trong /var/log 
 
+4.3 - Câu hỏi 
+- kill -9 khác kill (không có signal) ở điểm gì? Khi nào dùng -9?
+-- đối với kill -9 là gửi sigkill 9 đây là tín hiệu ép buộc process chết ngay lập tức không thế chống lại 
+-- đối với kill thì sigkill 15 chỉ yêu cầu tắt nhưng khi gặp các process đặt biết thì ko thể tắt được 
+-- Nói dể hiểu ví dụ thực tế khi mình muốn tắt chương trình đối với kill là mình bấm nút tắt có trên chương trình còn đối với kill 9 là mình bấm end task trong task manager hoặc có thể rút điện luôn 
+
+- systemctl reload khác restart ở điểm gì? Khi nào dùng reload?
+-- Đối với restart thì mình làm 2 thứ là vừa tắt service rồi khởi động lại, vì thể những connection hoặc session đang chạy cũng tắt theo 
+-- Đối với reload thì mình chỉ nạp lại các config mới những service thì vẫn chạy 
+-- Ví dụ khi mình đi thay đồ, nếu là restart thì mình phải đi tấm luôn rồi mới thay đồ, còn reload là mình chỉ cần cởi đồ cũ ra rồi lấy bộ đồ mới mặt vào thôi 
+
+- Load average 3.5 trên máy 2 CPU có nghĩa là gì?
+-- Máy có 2 CPU nhưng load average 3.5 tức là trung bình có 3.5 process đang cần CPU nhưng chỉ có 2 core xử lý được cùng lúc nên trung bình có khoảng 1.5 process phải chờ CPU 
+==> Máy này đang quá tải công suất, CPU không đáp ứng được, hệ thống sẽ bị chấm rất nhiều 
+
+- Sự khác nhau giữa "free" và "available" trong free -h?
+-- free là phần ram còn trống và ko dùng tới 
+-- Đối với available là lượng ram có thể dùng được bao gồm luôn free và các cache mà linux sử dụng 
+-- Ví dụ cho dễ hình dung: Mình có cái bàn gồm 10 chỗ ngồi mình kiểm tra thì thấy bàn này còn 2 chỗ cho 2 người ngồi tức là free = 2, nhưng ko đồng nghĩ là 8 chỗ đang sử dụng là 8 người ngồi, có thể chỉ có 6 người ngồi thôi nhưng 2 chỗ còn lại do Linux dùng để chứa các cache/buff kiểu như để sách lên chỗ trống vậy, và 2 chỗ đang để sách này nếu cần thì Linux sẽ dẹp sách ra 1 bên để đưa 2 người vào ngồi
+==> Nên là muốn kiểm tra máy còn sử dụng được bao nhiêu Ram thì nhìn vào chỉ số available sẽ chính xác hơn 
 
