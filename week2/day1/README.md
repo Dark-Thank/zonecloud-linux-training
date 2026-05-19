@@ -45,3 +45,17 @@ dpkg -l nginx                       # Kiểm tra bằng dpkg
 
 dpkg -L nginx                       # Xem file nào được cài bởi package
 --> câu lệnh này giúp chúng ta biết được nginx đã cài những file nào vào máy 
+
+curl -fsSL https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
+  -o /usr/share/keyrings/nginx.gpg
+--> câu lệnh này giúp mình cài repo nginx official, và lưu lại GPG key vào file /usr/share/keyrings/nginx.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/nginx.gpg] http://nginx.org/packages/ubuntu $(lsb_release -cs) nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+--> thêm repo vào danh sách source, sẽ giúp apt lấy nginx từ kho của nginx.org thay vì của ubuntu, kiểu như sẽ giúp mình lấy code của chính chủ 
+
+
+
+ 
+
+
+
